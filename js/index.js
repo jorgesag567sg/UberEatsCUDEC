@@ -1,4 +1,10 @@
+<<<<<<< HEAD
  let contenido = "";
+=======
+let contenido = "";
+
+btnAgregarPlatillo = document.getElementById('btnAgregarPlatillo');
+>>>>>>> f878ff3b267e356af3e4b85a537b60c0687fd0c2
 
 document.addEventListener('DOMContentLoaded', function() {
   // nav menu
