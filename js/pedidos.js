@@ -3,20 +3,55 @@ if (typeof contenidoLista === 'undefined') {
 }
 
 function agregarALista(platillo, id){
-    // Añade el platillo real de la base de datos a la lista
+    // Esto es lo que llena tu menú deslizable con los platillos de la base de datos
     contenidoLista += `<option value='${id}'>${platillo.nombre}</option>`;
     
     const lista = document.getElementById("listaPlatillo");
     if (lista) {
         lista.innerHTML = contenidoLista;
         
-        // CRUCIAL: Esto le dice a Materialize que vuelva a activar el deslizar con los nuevos datos
+        // Esto obliga a Materialize a actualizar el menú deslizable en tiempo real
         var elems = document.querySelectorAll('select');
         M.FormSelect.init(elems);
     }
 }
 
 M.AutoInit();
+
+// EVENTO PARA GUARDAR EL PEDIDO EN FIREBASE
+const formularioPedido = document.querySelector(".add-order");
+if (formularioPedido) {
+    formularioPedido.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        // MODIFICADO: Captura el valor único (ID) del platillo en lugar de su texto
+        const selectPlatillo = document.getElementById("listaPlatillo");
+        const idPlatilloSeleccionado = selectPlatillo.value; 
+        
+        // Objeto con la estructura correcta para tu Firebase
+        const pedidoNuevo = {
+            platillo: idPlatilloSeleccionado, // Guarda el ID (ej: '0fnTba2ZwwdWpCLv0FWM')
+            cliente: document.getElementById("nombre-cliente").value,
+            direccion: document.getElementById("direccion-cliente").value,
+            fecha: new Date() // Guarda la hora para que lleves control
+        };
+
+        // Guardar en la colección "pedidos"
+        db.collection("pedidos").add(pedidoNuevo)
+        .then(() => {
+            alert("¡Pedido guardado con éxito!");
+            formularioPedido.reset(); // Limpia los inputs del formulario
+            
+            // Reinicia el select visual de Materialize
+            var elems = document.querySelectorAll('select');
+            M.FormSelect.init(elems);
+        })
+        .catch((error) => {
+            console.error("Error al guardar el pedido:", error);
+            alert("Hubo un error al guardar tu pedido");
+        });
+    });
+}
 
 const btnUbicacion = document.getElementById("btnUbicacion");
 if (btnUbicacion) {
@@ -36,7 +71,17 @@ function exito (posicion){
         }
     })
     .then(respuesta => respuesta.json()) 
-    .then(data => alert(data.display_name))
+    .then(data => {
+        let ciudad = data.address.city;
+        let pais = data.address.country;
+        document.getElementById("ubicacion").innerHTML ='${ciudad}, ${pais}';
+        
+        const campoDireccion = document.getElementById("direccion-cliente");
+        if (campoDireccion) {
+            campoDireccion.value = data.display_name;
+            M.textareaAutoResize(campoDireccion);
+        }
+    })
     .catch(error => console.error(error)); 
 }
 

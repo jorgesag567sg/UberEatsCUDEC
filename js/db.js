@@ -4,7 +4,7 @@ db.collection("platillos").onSnapshot((datos) => {
         if (registro.type == "added") {
             console.log(registro.doc.data(), registro.doc.id);
             
-            // CORREGIDO: Escudo estricto para evitar que index.js:34 rompa la página de pedidos
+            // Escudo para que index.js no rompa nada en pedidos.html
             const contenedorRecetas = document.querySelector(".recipes");
             if (contenedorRecetas && typeof mostrarPlatillo === "function") {
                 mostrarPlatillo(registro.doc.data(), registro.doc.id);
@@ -19,6 +19,13 @@ db.collection("platillos").onSnapshot((datos) => {
             const contenedorRecetas = document.querySelector(".recipes");
             if (contenedorRecetas && typeof actualizarPlatillo === "function") {
                 actualizarPlatillo(registro.doc.data(), registro.doc.id);
+            }
+        }
+        // NUEVO: Borrado instantáneo de la tarjeta en la interfaz sin recargar la página
+        if (registro.type === "removed") {
+            const platilloElemento = document.querySelector(`.recipe[data-id="${registro.doc.id}"]`);
+            if (platilloElemento) {
+                platilloElemento.remove();
             }
         }
     });
