@@ -1,41 +1,77 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<<<<<<< HEAD
   <title>UberEatsCUDEC</title>
-=======
-  <title>La tragazón</title>
-  <!-- materialize icons, css & js -->
->>>>>>> f878ff3b267e356af3e4b85a537b60c0687fd0c2
-  <link type="text/css" href="/css/materialize.min.css" rel="stylesheet">
+
+  <!-- Configuración PWA -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="UberEatsCUDEC">
+  <meta name="apple-mobile-web-app-title" content="UberEatsCUDEC">
+  <meta name="theme-color" content="#f7771a">
+  <meta name="msapplication-navbutton-color" content="#f7771a">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+  <!-- Íconos PWA -->
+  <link rel="icon" type="image/png" sizes="16x16" href="iconos/icons/icon-16x16.png">
+  <link rel="apple-touch-icon" type="image/png" sizes="16x16" href="iconos/icons/icon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="iconos/icons/icon-32x32.png">
+  <link rel="apple-touch-icon" type="image/png" sizes="32x32" href="iconos/icons/icon-32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="iconos/icons/icon-48x48.png">
+  <link rel="apple-touch-icon" type="image/png" sizes="48x48" href="iconos/icons/icon-48x48.png">
+  <link rel="icon" type="image/png" sizes="64x64" href="iconos/icons/icon-64x64.png">
+  <link rel="apple-touch-icon" type="image/png" sizes="64x64" href="iconos/icons/icon-64x64.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="iconos/icons/icon-96x96.png">
+  <link rel="apple-touch-icon" type="image/png" sizes="96x96" href="iconos/icons/icon-96x96.png">
+  <link rel="icon" type="image/png" sizes="128x128" href="iconos/icons/icon-128x128.png">
+  <link rel="apple-touch-icon" type="image/png" sizes="128x128" href="iconos/icons/icon-128x128.png">
+  <link rel="icon" type="image/png" sizes="144x144" href="iconos/icons/icon-144x144.png">
+  <link rel="apple-touch-icon" type="image/png" sizes="144x144" href="iconos/icons/icon-144x144.png">
+  <link rel="icon" type="image/png" sizes="152x152" href="iconos/icons/icon-152x152.png">
+  <link rel="apple-touch-icon" type="image/png" sizes="152x152" href="iconos/icons/icon-152x152.png">
+  <link rel="icon" type="image/png" sizes="180x180" href="iconos/icons/icon-180x180.png">
+  <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="iconos/icons/icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="iconos/icons/icon-192x192.png">
+  <link rel="apple-touch-icon" type="image/png" sizes="192x192" href="iconos/icons/icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="384x384" href="iconos/icons/icon-384x384.png">
+  <link rel="apple-touch-icon" type="image/png" sizes="384x384" href="iconos/icons/icon-384x384.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="iconos/icons/icon-512x512.png">
+  <link rel="apple-touch-icon" type="image/png" sizes="512x512" href="iconos/icons/icon-512x512.png">
+
+  <!-- Estilos y Scripts de Materialize -->
+  <link type="text/css" href="css/materialize.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link type="text/css" href="/css/styles.css" rel="stylesheet">
-  <script type="text/javascript" src="/js/materialize.min.js"></script>
+  <link type="text/css" href="css/styles.css" rel="stylesheet">
+  <script type="text/javascript" src="js/materialize.min.js"></script>
+
+  <style>
+    #canvas { display: none; }
+    #video { width: 100%; border-radius: 4px; background-color: #000; }
+    #foto { width: 100%; border-radius: 4px; margin-top: 10px; }
+  </style>
 </head>
 <body class="grey lighten-4">
 
   <nav class="z-depth-0">
     <div class="nav-wrapper container">
-<<<<<<< HEAD
-      <a href="/index.html">UberEatsCUDEC</a>
-=======
-      <a href="/">La tragazón</span></a>
->>>>>>> f878ff3b267e356af3e4b85a537b60c0687fd0c2
+      <a href="index.html">UberEatsCUDEC</a>
+
       <span class="right grey-text text-darken-1">
         <i class="material-icons sidenav-trigger" data-target="side-menu">menu</i>
       </span>
     </div>
   </nav>
 
-  <!-- MODIFICADO: Menú lateral con enlace a Pedidos y Contacto en blanco -->
   <ul id="side-menu" class="sidenav side-menu">
     <li><a class="subheader">UberEatsCUDEC</a></li>
-    <li><a href="/index.html" class="waves-effect">Inicio</a></li>
-    <li><a href="/pages/about.html" class="waves-effect">Acerca</a></li>
+    <li><a href="index.html" class="waves-effect">Inicio</a></li>
+    <li><a href="pages/about.html" class="waves-effect">Acerca</a></li>
     <li><div class="divider"></div></li>
-    <li><a href="/pages/pedidos.html" class="waves-effect">
+    <li><a href="pages/pedidos.html" class="waves-effect">
       <i class="material-icons">shopping_cart</i>Pedidos</a>
     </li>
     <li><a href="#" class="waves-effect">
@@ -53,10 +89,9 @@
     </a>
   </div>
 
-  
   <div id="side-form" class="sidenav side-form">
     <form class="add-recipe container section">
-      <h6 >Nuevo platillo</h6>
+      <h6>Nuevo platillo</h6>
       <div class="divider"></div>
       <div class="input-field">
         <input placeholder="ejemplo: Pizza" id="title" type="text" class="validate">
@@ -66,61 +101,54 @@
         <input placeholder="e.g. Tofu, mushroom, garlic" id="ingredients" type="text" class="validate">
         <label for="ingredients">Ingredientes</label>
       </div>
+      <input id="foto" type="hidden">
       <div class="input-field">
-      <input placeholder="ejemplo: 95" id="price" type="text" class="validate">
-      <label for="price">Precio</label>
-    </div>
+        <input placeholder="ejemplo: 95" id="price" type="text" class="validate">
+        <label for="price">Precio</label>
+      </div>
 
       <div class="input-field center">
-        <button id="btnAgregarPlatillo" class="btn-small">Agregar</button>
+        <button type="submit" id="btnAgregarPlatillo" class="btn-small orange darken-2">Agregar</button>
       </div>
     </form>
+
+    <div class="container section">
+      <div class="divider" style="margin-bottom: 15px;"></div>
+      
+      <button id="btnFoto" class="btn-small blue darken-2" style="width: 100%; margin-bottom: 10px;">
+        <i class="material-icons left">videocam</i>Iniciar Cámara
+      </button>
+      
+      <div id="camara">
+          <video id="video">No hay video disponible</video>
+      </div>
+      
+      <button onclick="tomarFoto()" class="btn-small green darken-2" style="width: 100%; margin-top: 10px;">
+        <i class="material-icons left">camera_alt</i>Capturar Foto
+      </button>
+
+      <canvas id="canvas"></canvas>
+      
+      <div id="salida" style="margin-top: 15px;">
+        <img id="foto-vista" src="" alt="Vista previa de captura">
+      </div>
+
+      <button onclick="limpiarFoto()" class="btn-small grey darken-1" style="width: 100%; margin-top: 10px; margin-bottom: 30px;">
+        <i class="material-icons left">delete_sweep</i>Limpiar Foto
+      </button>
+    </div>
   </div>
 
-<<<<<<< HEAD
-  
   <script src="https://www.gstatic.com/firebasejs/6.0.1/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/6.0.1/firebase-firestore.js"></script>
 
-<script>
-  const firebaseConfig = {
-    apiKey: "AIzaSyDQkpFdtSM0bkqwFnF4MPKBuw_kF3SBKwk",
-    authDomain: "cudecubereat.firebaseapp.com",
-    projectId: "cudecubereat",
-    storageBucket: "cudecubereat.firebasestorage.app",
-    messagingSenderId: "111558980741",
-    appId: "1:111558980741:web:e334de7c1137b867a5e5ec",
-    measurementId: "G-CVFBV5YMZZ"
-=======
-
-  <script src="https://www.gstatic.com/firebasejs/6.0.1/firebase-app.js">
-  </script>
-  
-  <script src="https://www.gstatic.com/firebasejs/6.0.1/firebase-firestore.js">
-  </script>
-
+  <script src="js/firebase.js"></script>
+  <script src="js/db.js"></script>
+  <script src="js/index.js"></script>
   <script>
-  const firebaseConfig = {
-    apiKey: "AIzaSyDgpL5d_5lCM4gnE8rMBiZ09FxUqi8n9JY",
-    authDomain: "cudecubereats.firebaseapp.com",
-    projectId: "cudecubereats",
-    storageBucket: "cudecubereats.firebasestorage.app",
-    messagingSenderId: "658856035571",
-    appId: "1:658856035571:web:eadb37ccfac7165f342386"
->>>>>>> f878ff3b267e356af3e4b85a537b60c0687fd0c2
-  };
-
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-  const db = firebase.firestore();
-</script>
-<<<<<<< HEAD
-   <script src="/js/firebase.js"></script>
-  <script src="/js/index.js"></script>
-<script src="/js/db.js"></script>
-=======
-  <script src="/js/index.js"></script>
-  <script src="/js/db.js"></script>
->>>>>>> f878ff3b267e356af3e4b85a537b60c0687fd0c2
+    if (typeof navigator.serviceWorker !== 'undefined') {
+      navigator.serviceWorker.register('sw.js')
+    }
+  </script>
 </body>
 </html>

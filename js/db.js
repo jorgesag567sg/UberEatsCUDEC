@@ -21,7 +21,6 @@ db.collection("platillos").onSnapshot((datos) => {
                 actualizarPlatillo(registro.doc.data(), registro.doc.id);
             }
         }
-        // NUEVO: Borrado instantáneo de la tarjeta en la interfaz sin recargar la página
         if (registro.type === "removed") {
             const platilloElemento = document.querySelector(`.recipe[data-id="${registro.doc.id}"]`);
             if (platilloElemento) {
@@ -40,6 +39,7 @@ if (formularioAgregar) {
             nombre: formularioAgregar.title.value,
             ingredientes: formularioAgregar.ingredients.value,
             precio: formularioAgregar.price.value,
+            imagen: document.getElementById("foto").value
         };
         
         db.collection("platillos").add(platilloNuevo)
