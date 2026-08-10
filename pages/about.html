@@ -1,45 +1,134 @@
-<html lang="en">
+<!DOCTYPE html>
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Food Ninja</title>
-  <!-- materialize icons, css & js -->
-  <link type="text/css" href="/css/materialize.min.css" rel="stylesheet">
+  <title>UberEatsCUDEC - Acerca de</title>
+
+  <!-- Configuración PWA -->
+  <link rel="manifest" href="../manifest.json">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="UberEatsCUDEC">
+  <meta name="apple-mobile-web-app-title" content="UberEatsCUDEC">
+  <meta name="theme-color" content="#f7771a">
+  <meta name="msapplication-navbutton-color" content="#f7771a">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+  <!-- Íconos PWA -->
+  <link rel="icon" type="image/png" sizes="16x16" href="../iconos/icons/icon-16x16.png">
+  <link rel="apple-touch-icon" type="image/png" sizes="16x16" href="../iconos/icons/icon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../iconos/icons/icon-32x32.png">
+  <link rel="apple-touch-icon" type="image/png" sizes="32x32" href="../iconos/icons/icon-32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="../iconos/icons/icon-48x48.png">
+  <link rel="apple-touch-icon" type="image/png" sizes="48x48" href="../iconos/icons/icon-48x48.png">
+  <link rel="icon" type="image/png" sizes="64x64" href="../iconos/icons/icon-64x64.png">
+  <link rel="apple-touch-icon" type="image/png" sizes="64x64" href="../iconos/icons/icon-64x64.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="../iconos/icons/icon-96x96.png">
+  <link rel="apple-touch-icon" type="image/png" sizes="96x96" href="../iconos/icons/icon-96x96.png">
+  <link rel="icon" type="image/png" sizes="128x128" href="../iconos/icons/icon-128x128.png">
+  <link rel="apple-touch-icon" type="image/png" sizes="128x128" href="../iconos/icons/icon-128x128.png">
+  <link rel="icon" type="image/png" sizes="144x144" href="../iconos/icons/icon-144x144.png">
+  <link rel="apple-touch-icon" type="image/png" sizes="144x144" href="../iconos/icons/icon-144x144.png">
+  <link rel="icon" type="image/png" sizes="152x152" href="../iconos/icons/icon-152x152.png">
+  <link rel="apple-touch-icon" type="image/png" sizes="152x152" href="../iconos/icons/icon-152x152.png">
+  <link rel="icon" type="image/png" sizes="180x180" href="../iconos/icons/icon-180x180.png">
+  <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="../iconos/icons/icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="../iconos/icons/icon-192x192.png">
+  <link rel="apple-touch-icon" type="image/png" sizes="192x192" href="../iconos/icons/icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="384x384" href="../iconos/icons/icon-384x384.png">
+  <link rel="apple-touch-icon" type="image/png" sizes="384x384" href="../iconos/icons/icon-384x384.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="../iconos/icons/icon-512x512.png">
+  <link rel="apple-touch-icon" type="image/png" sizes="512x512" href="../iconos/icons/icon-512x512.png">
+
+  <!-- Estilos Materialize -->
+  <link type="text/css" href="../css/materialize.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link type="text/css" href="/css/styles.css" rel="stylesheet">
-  <script type="text/javascript" src="/js/materialize.min.js"></script>
+  <link type="text/css" href="../css/styles.css" rel="stylesheet">
+  <script type="text/javascript" src="../js/materialize.min.js"></script>
 </head>
 <body class="grey lighten-4">
 
-  <!-- top nav -->
+  <!-- Barra de navegación -->
   <nav class="z-depth-0">
     <div class="nav-wrapper container">
-      <a href="/">Food<span>Ninja</span></a>
+      <a href="../index.html">UberEatsCUDEC</a>
       <span class="right grey-text text-darken-1">
         <i class="material-icons sidenav-trigger" data-target="side-menu">menu</i>
       </span>
     </div>
   </nav>
 
-  <!-- side nav -->
-  <ul id="side-menu" class="sidenav side-menu">
-    <li><a class="subheader">FOODNINJA</a></li>
-    <li><a href="/" class="waves-effect">Home</a></li>
-    <li><a href="/pages/about.html" class="waves-effect">About</a></li>
+  <!-- Menú lateral -->
+  <ul id="side-menu" class="sidenav side-menu sidenav-right">
+    <li><a class="subheader">UberEatsCUDEC</a></li>
+    <li><a href="../index.html" class="waves-effect">Inicio</a></li>
+    <li><a href="about.html" class="waves-effect">Acerca</a></li>
     <li><div class="divider"></div></li>
-    <li><a href="/pages/contact.html" class="waves-effect">
-      <i class="material-icons">mail_outline</i>Contact</a>
+    <li><a href="pedidos.html" class="waves-effect">
+      <i class="material-icons">shopping_cart</i>Pedidos</a>
     </li>
   </ul>
 
-  <!-- content -->
-  <div class="container grey-text">
-    <h5 class="center">About Food Ninja</h5>
-    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus, porro voluptatum illum veniam eaque sunt sit labore provident eligendi! Voluptate amet suscipit inventore unde maxime atque impedit officia nobis laboriosam!</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam voluptatibus omnis, ea doloremque exercitationem id necessitatibus. Voluptatem officiis cupiditate commodi totam, hic laborum est ducimus amet iure, non dignissimos illo.</p>
+  <!-- Contenido Principal: Acerca de -->
+  <div class="container grey-text text-darken-2">
+    <div class="card-panel white center-align" style="margin-top: 25px; border-radius: 12px; padding: 25px 20px;">
+      
+      <!-- 1. Información de la aplicación -->
+      <div class="section">
+        <img src="../iconos/icons/icon-128x128.png" alt="Logotipo UberEatsCUDEC" style="width: 90px; height: 90px; margin-bottom: 10px;">
+        <h4 class="black-text" style="margin: 0; font-weight: bold;">UberEatsCUDEC</h4>
+        <p class="grey-text text-darken-1" style="font-size: 0.95rem; margin-top: 5px;">Versión 2.4.1</p>
+      </div>
+
+      <div class="divider" style="margin: 15px 0;"></div>
+
+      <!-- 2. Descripción de la aplicación -->
+      <div class="section left-align">
+        <h6 class="black-text" style="font-weight: bold; display: flex; align-items: center;">
+          <i class="material-icons orange-text text-darken-2" style="margin-right: 8px;">info</i>
+          Descripción de la aplicación
+        </h6>
+        <p style="margin-top: 8px; line-height: 1.6; text-align: justify;">
+          <strong>UberEatsCUDEC</strong> es una aplicación web progresiva (PWA) desarrollada para modernizar la gestión de pedidos de comida e insumos dentro del entorno universitario CUDEC. Resuelve el problema de la falta de un catálogo centralizado y accesible sin conexión, facilitando la interacción entre la cafetería y los estudiantes.
+        </p>
+
+        <p style="margin-top: 10px; font-weight: bold;" class="black-text">Características principales:</p>
+        <ul class="browser-default" style="margin-top: 5px; padding-left: 20px; line-height: 1.5;">
+          <li>Registro y catálogo dinámico de platillos con persistencia en la nube mediante Firebase.</li>
+          <li>Captura directa de fotografías usando la cámara del dispositivo.</li>
+          <li>Ubicación precisa de entregas con mapa interactivo integrado (Leaflet).</li>
+          <li>Soporte de funcionamiento PWA para la instalación local y consulta en dispositivos móviles.</li>
+        </ul>
+      </div>
+
+      <div class="divider" style="margin: 15px 0;"></div>
+
+      <!-- 3. Soporte y Contacto -->
+      <div class="section left-align">
+        <h6 class="black-text" style="font-weight: bold; display: flex; align-items: center;">
+          <i class="material-icons orange-text text-darken-2" style="margin-right: 8px;">help_outline</i>
+          Soporte Técnico y Contacto
+        </h6>
+        <p style="margin-top: 8px; line-height: 1.5;">
+          Si encuentras alguna falla durante la navegación, problemas con la carga de platillos o requieres asistencia con la plataforma, puedes ponerte en contacto con el desarrollador:
+        </p>
+        
+        <div style="margin-top: 12px; background-color: #f5f5f5; padding: 12px; border-radius: 8px; display: flex; align-items: center;">
+          <i class="material-icons grey-text text-darken-2" style="margin-right: 10px;">email</i>
+          <span style="font-weight: 500; word-break: break-all;">jorge.sag567sg@gmail.com</span>
+        </div>
+      </div>
+
+    </div>
   </div>
 
-  <script src="/js/ui.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var sideNavs = document.querySelectorAll('.sidenav');
+      M.Sidenav.init(sideNavs, { edge: 'right' });
+    });
+  </script>
 </body>
 </html>

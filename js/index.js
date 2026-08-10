@@ -48,7 +48,7 @@ function mostrarPlatillo(platillo, id){
 }
 
 function actualizarPlatillo(platillo, id){
-  let tarjeta = document.getElementById(id); // CORREGIDO: quitadas las comillas simples raras
+  let tarjeta = document.getElementById(id);
   if (tarjeta) {
     tarjeta.querySelector(".recipe-title").innerHTML = platillo.nombre;
     tarjeta.querySelector(".recipe-ingredients").innerHTML = platillo.ingredientes;
@@ -68,17 +68,26 @@ let streaming = false;
 const width = 320;
 let height = 0;
 
-// Obtenemos los elementos del DOM (Se ejecutan cuando se cargan los scripts)
+// Obtenemos los elementos del DOM
 const video = document.getElementById('video');
 const canvas = document.getElementById('canvas');
 const foto = document.getElementById('foto');
 const btnFoto = document.getElementById('btnFoto');
+const camaraDiv = document.getElementById('camara');
 
-// CORREGIDO: Evento para activar la cámara cuando das clic en "Iniciar Cámara"
+// Evento para activar la cámara cuando das clic en "Iniciar Cámara"
 if (btnFoto) {
   btnFoto.addEventListener("click", function(){
-    navigator.mediaDevices.getUserMedia({
-      video: true,
+    // Si la caja de la cámara estaba oculta, la volvemos a mostrar
+    if (camaraDiv) camaraDiv.style.display = "block";
+
+    navigator.mediaDevices
+    .getUserMedia({
+      video: {
+        facingMode: {
+          ideal: "environment"
+        }
+      },
       audio: false
     })
     .then((stream) => {
@@ -86,7 +95,7 @@ if (btnFoto) {
       video.play();
     })
     .catch((error) => {
-      console.log(error); // CORREGIDO: era punto en lugar de coma
+      console.log(error);
     });
   });
 }
@@ -96,7 +105,7 @@ if (video) {
     if (!streaming){
       height = video.videoHeight / (video.videoWidth / width);
       video.setAttribute("width", width);
-      video.setAttribute("height", height); // CORREGIDO: decía heignt
+      video.setAttribute("height", height);
       canvas.setAttribute("width", width);
       canvas.setAttribute("height", height);
       streaming = true;
@@ -104,6 +113,7 @@ if (video) {
   });
 }
 
+// FUNCIÓN CORREGIDA: Toma la foto, detiene la cámara y oculta la vista de video
 function tomarFoto(){
   const contexto = canvas.getContext("2d");
   if (width && height){
@@ -120,12 +130,28 @@ function tomarFoto(){
     if (inputOculto) {
       inputOculto.value = fotoFinal;
     }
-    
+
+    // 1. Apagar el stream de la cámara
+    if (video && video.srcObject) {
+      const stream = video.srcObject;
+      const tracks = stream.getTracks();
+      tracks.forEach(track => track.stop()); // Apaga el foco de la cámara
+      video.srcObject = null;
+    }
+
+    // 2. Ocultar el recuadro del video
+    if (camaraDiv) {
+      camaraDiv.style.display = "none";
+    }
+
+    streaming = false;
+
   } else {
     limpiarFoto();
   }
 }
 
+// FUNCIÓN CORREGIDA: Limpia la foto y se asegura de que la cámara quede apagada
 function limpiarFoto(){
   const contexto = canvas.getContext("2d");
   if (width && height) {
@@ -136,6 +162,21 @@ function limpiarFoto(){
     
     if (vistaPrevia) vistaPrevia.setAttribute("src", "");
     if (inputOculto) inputOculto.value = "";
-    console.log("Foto limpiada correctamente.");
+
+    // Apagar la cámara si siguiera abierta
+    if (video && video.srcObject) {
+      const stream = video.srcObject;
+      const tracks = stream.getTracks();
+      tracks.forEach(track => track.stop());
+      video.srcObject = null;
+    }
+
+    // Ocultar el recuadro de cámara
+    if (camaraDiv) {
+      camaraDiv.style.display = "none";
+    }
+
+    streaming = false;
+    console.log("Foto limpiada y cámara detenida correctamente.");
   }
 }
