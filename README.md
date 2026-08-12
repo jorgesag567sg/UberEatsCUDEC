@@ -73,10 +73,16 @@ UBEREATSCUDEC/
 ---
 
 ## 7. Evidencias / capturas de pantalla
-* **Inicio:** `index.html` (Vista principal con catálogo de platillos).
-* **Realizar pedido:** `pages/pedidos.html` (Formulario de registro, mapa Leaflet y generación dinámica de código QR).
-* **Acerca de:** `pages/about.html` (Información del proyecto y desarrolladores).
-* **Contacto:** `pages/contact.html` (Información de soporte y contacto).
+
+### Inicio
+![Pantalla de Inicio](img/inicio.png)
+
+### Realizar pedido
+![Registro de pedido con mapa y codigo QR](img/pedido.png)
+
+### Acerca de
+![Pagina Acerca de](img/about.png)
+
 
 ---
 
