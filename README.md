@@ -83,6 +83,8 @@ UBEREATSCUDEC/
 ### Acerca de
 ![Pagina Acerca de](img/about.png)
 
+### Contacto
+![Pagina de Contacto](img/contact.png)
 
 ---
 

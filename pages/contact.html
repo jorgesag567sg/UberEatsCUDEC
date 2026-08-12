@@ -1,50 +1,84 @@
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Food Ninja</title>
-  <!-- materialize icons, css & js -->
-  <link type="text/css" href="/css/materialize.min.css" rel="stylesheet">
+  <title>Contacto - UberEatsCUDEC</title>
+  <!-- Materialize CSS & Iconos -->
+  <link type="text/css" href="../css/materialize.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link type="text/css" href="/css/styles.css" rel="stylesheet">
-  <script type="text/javascript" src="/js/materialize.min.js"></script>
+  <link type="text/css" href="../css/styles.css" rel="stylesheet">
+  <link rel="manifest" href="../manifest.json">
 </head>
 <body class="grey lighten-4">
 
-  <!-- top nav -->
-  <nav class="z-depth-0">
+  <!-- top nav con el color café/marrón exacto de tu app -->
+  <nav class="z-depth-0" style="background-color: #FFE6CC;">
     <div class="nav-wrapper container">
-      <a href="/">Food<span>Ninja</span></a>
-      <span class="right grey-text text-darken-1">
-        <i class="material-icons sidenav-trigger" data-target="side-menu">menu</i>
+      <a href="../index.html" class="brand-logo brown-text text-darken-3 bold" style="font-size: 1.4rem;">UBEREATSCUDEC</a>
+      <span class="right">
+        <i class="material-icons sidenav-trigger brown-text text-darken-3" data-target="side-menu" style="cursor: pointer; font-size: 2rem;">menu</i>
       </span>
     </div>
   </nav>
 
-  <!-- side nav -->
+  <!-- side nav (Aparece a la derecha) -->
   <ul id="side-menu" class="sidenav side-menu">
-    <li><a class="subheader">FOODNINJA</a></li>
-    <li><a href="/" class="waves-effect">Home</a></li>
-    <li><a href="/pages/about.html" class="waves-effect">About</a></li>
+    <li><a class="subheader bold" style="font-size: 1.1rem; color: #a17052;">UBEREATSCUDEC</a></li>
+    <li><a href="../index.html" class="waves-effect"><i class="material-icons">home</i>Inicio</a></li>
+    <li><a href="about.html" class="waves-effect"><i class="material-icons">info</i>Acerca de</a></li>
     <li><div class="divider"></div></li>
-    <li><a href="/pages/contact.html" class="waves-effect">
-      <i class="material-icons">mail_outline</i>Contact</a>
-    </li>
+    <li><a href="pedidos.html" class="waves-effect"><i class="material-icons">shopping_cart</i>Pedidos</a></li>
+    <li><a href="contact.html" class="waves-effect"><i class="material-icons">mail_outline</i>Contacto</a></li>
   </ul>
 
   <!-- content -->
-  <div class="container grey-text">
-    <h5 class="center">Contact Us</h5>
-    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus, porro voluptatum illum veniam eaque sunt sit labore provident eligendi! Voluptate amet suscipit inventore unde maxime atque impedit officia nobis laboriosam!</p>
-    <div class="divider"></div>
-    <h6>Find us at:</h6>
-    <ul>
-      <li>123 Spicy Noodle Road</li>
-      <li>Manchester, UK</li>
-    </ul>
+  <div class="container section">
+    <h5 class="center-align brown-text text-darken-3 bold" style="margin-top: 20px;">Contacto y Soporte</h5>
+    <p class="center-align grey-text text-darken-1" style="font-size: 1rem; margin-bottom: 30px;">
+      Atención a clientes y soporte técnico de la plataforma UberEatsCUDEC.
+    </p>
+
+    <div class="row">
+      <div class="col s12 m10 offset-m1 l8 offset-l2">
+        <div class="card-panel white z-depth-1" style="border-radius: 8px; padding: 25px;">
+          <h6 class="brown-text text-darken-3 bold" style="font-size: 1.2rem; margin-bottom: 15px;">
+            <i class="material-icons left" style="color: #d87040;">business</i>Información General
+          </h6>
+          
+          <div class="divider" style="margin-bottom: 15px;"></div>
+
+          <ul class="collection clean-collection" style="border: none;">
+            <li class="collection-item" style="padding: 10px 0;">
+              <strong class="grey-text text-darken-3">Desarrollador:</strong> 
+              <span class="grey-text text-darken-1">Jorge Salgado</span>
+            </li>
+            <li class="collection-item" style="padding: 10px 0;">
+              <strong class="grey-text text-darken-3">Correo de Soporte:</strong> 
+              <span class="grey-text text-darken-1">jorge.sag567sg@gmail.com</span>
+            </li>
+            <li class="collection-item" style="padding: 10px 0;">
+              <strong class="grey-text text-darken-3">Institución:</strong> 
+              <span class="grey-text text-darken-1">Universidad CUDEC</span>
+            </li>
+            <li class="collection-item" style="padding: 10px 0;">
+              <strong class="grey-text text-darken-3">Ubicación:</strong> 
+              <span class="grey-text text-darken-1">Tlalnepantla de Baz, Estado de México</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
   </div>
 
-  <script src="/js/ui.js"></script>
+  <!-- Scripts -->
+  <script src="../js/materialize.min.js"></script>
+  <script src="../js/ui.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var elems = document.querySelectorAll('.sidenav');
+      M.Sidenav.init(elems, { edge: 'right' });
+    });
+  </script>
 </body>
 </html>
