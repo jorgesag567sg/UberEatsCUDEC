@@ -48,7 +48,6 @@ Desarrollar una aplicación web progresiva (PWA) funcional e intuitiva para la g
 
 ## 6. Estructura del proyecto
 
-
 ```text
 UBEREATSCUDEC/
 ├── css/
@@ -71,6 +70,7 @@ UBEREATSCUDEC/
 ├── manifest.json
 ├── README.md
 └── sw.js
+```
 
 
 ---
