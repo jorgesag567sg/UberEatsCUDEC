@@ -47,6 +47,9 @@ Desarrollar una aplicación web progresiva (PWA) funcional e intuitiva para la g
 ---
 
 ## 6. Estructura del proyecto
+
+
+```text
 UBEREATSCUDEC/
 ├── css/
 │   ├── materialize.min.css
@@ -76,6 +79,9 @@ UBEREATSCUDEC/
 
 ### Inicio
 ![Pantalla de Inicio](img/inicio.png)
+
+### Agregar platillo 
+![Pagina de  Agregar platillo](img/Agregar.png)
 
 ### Realizar pedido
 ![Registro de pedido con mapa y codigo QR](img/pedido.png)
